@@ -13,7 +13,12 @@ public class LearnRegex {
 		return Pattern.matches("[A-Z]{1}[a-z]{2,}", l_name);
 		
 	}
-
+	public static boolean emailCheck(String email) {
+		return Pattern.matches("[a-z]{1,}(\\.{1}[a-z]{1,})*@{1}[a-z]{1,}(.co){1}(\\.{1}[a-z]{1,})*", email);
+		
+	}
+	
+	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter first name:");
@@ -22,6 +27,9 @@ public class LearnRegex {
 		System.out.println("Enter last name:");
 		String l_name=sc.nextLine();
 		System.out.println(firstNameCheck(l_name));
+		System.out.println("Enter email:");
+		String email=sc.nextLine();
+		System.out.println(emailCheck(email));
 		sc.close();
 	}
 
