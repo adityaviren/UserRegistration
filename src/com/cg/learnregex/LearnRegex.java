@@ -17,19 +17,22 @@ public class LearnRegex {
 		return Pattern.matches("[a-z]{1,}(\\.{1}[a-z]{1,})*@{1}[a-z]{1,}(.co){1}(\\.{1}[a-z]{1,})*", email);
 		
 	}
+	public static boolean mobileCheck(String mobile) {
+		return Pattern.matches("[0-9]{2}\s{1}[1-9]{1}[0-9]{9}", mobile);
+		
+	}
 	
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter first name:");
-		String f_name=sc.nextLine();
-		System.out.println(firstNameCheck(f_name));
+		System.out.println(firstNameCheck(sc.nextLine()));
 		System.out.println("Enter last name:");
-		String l_name=sc.nextLine();
-		System.out.println(firstNameCheck(l_name));
+		System.out.println(firstNameCheck(sc.nextLine()));
 		System.out.println("Enter email:");
-		String email=sc.nextLine();
-		System.out.println(emailCheck(email));
+		System.out.println(emailCheck(sc.nextLine()));
+		System.out.println("Enter mobile number");
+		System.out.println(mobileCheck(sc.nextLine()));
 		sc.close();
 	}
 
