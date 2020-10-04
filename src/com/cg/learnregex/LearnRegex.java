@@ -22,7 +22,7 @@ public class LearnRegex {
 		
 	}
 	public static boolean passwordCheck(String password) {
-		return Pattern.matches("(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{8,}", password);
+		return Pattern.matches("(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z0-9]{8,}", password);
 		
 	}
 	
