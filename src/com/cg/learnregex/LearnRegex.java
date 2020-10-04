@@ -21,6 +21,11 @@ public class LearnRegex {
 		return Pattern.matches("[0-9]{2}\s{1}[1-9]{1}[0-9]{9}", mobile);
 		
 	}
+	public static boolean passwordCheck(String password) {
+		return Pattern.matches("[a-zA-Z]{8,}", password);
+		
+	}
+	
 	
 	
 	public static void main(String[] args) {
@@ -33,6 +38,8 @@ public class LearnRegex {
 		System.out.println(emailCheck(sc.nextLine()));
 		System.out.println("Enter mobile number");
 		System.out.println(mobileCheck(sc.nextLine()));
+		System.out.println("Enter password");
+		System.out.println(passwordCheck(sc.nextLine()));
 		sc.close();
 	}
 
