@@ -16,9 +16,8 @@ public class LearnRegex {
 	}
 
 	public static boolean emailCheck(String email) {
-		boolean emailCheck = Pattern.matches("[a-z0-9]{1}([a-z0-9!#$%^&*_=.+-]{0,})*@{1}[a-z0-9]{1,}(\\.{1}[a-z]{2,})*",
-				email);
-		return emailCheck;
+		return Pattern.matches("^[A-Za-z0-9]+(\\.[_A-Za-z0-9-])*@"
+				+ "[A-Za-z0-9]+(\\.[A-Za-z0-9]+){0,1}(\\.[A-Za-z]{2,})$",email);
 
 	}
 
@@ -29,7 +28,7 @@ public class LearnRegex {
 
 	public static boolean passwordCheck(String password) {
 		boolean passCheck = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$", password);
-		passCheck = passCheck && Pattern.matches("\\w*[^\\w\\s]{1}\\w*", password);
+		passCheck = passCheck && Pattern.matches(".*[!@#$%]{1}.*", password);
 		return passCheck;
 
 	}
@@ -41,7 +40,7 @@ public class LearnRegex {
 		System.out.println("Enter last name:");
 		System.out.println(firstNameCheck(sc.nextLine()));
 		System.out.println("Enter email:");
-		System.out.println(emailCheck("a2002.@gmail.com"));
+		System.out.println(emailCheck(sc.nextLine()));
 		System.out.println("Enter mobile number");
 		System.out.println(mobileCheck(sc.nextLine()));
 		System.out.println("Enter password");
