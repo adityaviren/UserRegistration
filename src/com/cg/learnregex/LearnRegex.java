@@ -16,7 +16,7 @@ public class LearnRegex {
 	}
 
 	public static boolean emailCheck(String email) {
-		return Pattern.matches("^[A-Za-z0-9]+(\\.[_A-Za-z0-9-])*@"
+		return Pattern.matches("^[A-Za-z0-9]+(\\.[_A-Za-z0-9-]+)*@"
 				+ "[A-Za-z0-9]+(\\.[A-Za-z0-9]+){0,1}(\\.[A-Za-z]{2,})$",email);
 
 	}
